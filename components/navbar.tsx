@@ -46,12 +46,13 @@ export default function Navbar() {
           </div>
 
           {/* Navegación */}
-          <div className="flex items-center gap-2 md:gap-6 font-bold text-sm">
+          <div className="flex items-center gap-1 md:gap-6 font-bold text-xs md:text-sm">
             <button 
               onClick={() => handleFakeClick('Partidos Recomendados')} 
-              className="text-slate-400 hover:text-white px-3 py-2 rounded-xl transition-all hover:bg-slate-900 cursor-pointer"
+              className="text-slate-400 hover:text-white px-2 md:px-3 py-2 rounded-xl transition-all hover:bg-slate-900 cursor-pointer whitespace-nowrap"
             >
-              Partidos Recomendados
+              <span className="hidden md:inline">Partidos Recomendados</span>
+              <span className="md:hidden">Partidos</span>
             </button>
             
             <button 
@@ -64,10 +65,11 @@ export default function Navbar() {
             {/* Botón CTA Destacado */}
             <button 
               onClick={() => setModalPremiumOpen(true)}
-              className="bg-gradient-to-r from-amber-400 to-orange-500 text-slate-950 px-4 py-2 rounded-xl shadow-lg shadow-orange-500/10 hover:shadow-orange-500/20 hover:scale-[1.02] transition-all flex items-center gap-1.5 cursor-pointer"
+              className="bg-gradient-to-r from-amber-400 to-orange-500 text-slate-950 px-3 md:px-4 py-2 rounded-xl shadow-lg hover:scale-[1.02] transition-all flex items-center gap-1.5 cursor-pointer flex-shrink-0"
             >
-              <Zap className="w-4 h-4 fill-current" />
-              <span>Premium</span>
+              <Zap className="w-4 h-4 fill-current animate-pulse" />
+              <span className="md:hidden">Pro</span>
+              <span className="hidden md:inline">Premium</span>
             </button>
           </div>
 
